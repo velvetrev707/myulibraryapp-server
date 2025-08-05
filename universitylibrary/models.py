@@ -39,8 +39,13 @@ class Book(models.Model):
     """
     Model representing a book in the library.
     """
+
+    # Default genre
+    DEFAULT_GENRE = 'Fiction'
+
     title = models.CharField(max_length=255)
     author = models.CharField(max_length=255)
+    genre = models.CharField(max_length=50, default=DEFAULT_GENRE)
     isbn = models.CharField(max_length=13, unique=True)
     total_copies = models.PositiveIntegerField(default=1)
     available_copies = models.PositiveIntegerField(default=1)

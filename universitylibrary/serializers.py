@@ -20,6 +20,9 @@ class BookSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class CheckoutSerializer(serializers.ModelSerializer):
+    book = BookSerializer(read_only=True)
+    student = UserSerializer(read_only=True)
+
     class Meta:
         model = Checkout
         fields = '__all__'

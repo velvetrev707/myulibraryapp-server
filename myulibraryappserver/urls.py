@@ -21,11 +21,6 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from universitylibrary.views import UserViewSet, BookViewSet, CheckoutViewSet
 from universitylibrary.serializers import CustomTokenObtainPairSerializer
 
-# router = DefaultRouter()
-# router.register(r'books', BookViewSet)
-# router.register(r'users', UserViewSet)
-# router.register(r'checkouts', CheckoutViewSet)
-
 # Book Views
 book_list = BookViewSet.as_view({'get': 'list','post': 'create'})
 book_detail = BookViewSet.as_view({'get': 'retrieve'})
